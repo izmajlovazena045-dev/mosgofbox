@@ -12,7 +12,7 @@ from google.oauth2.service_account import Credentials
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CREDENTIALS_PATH = os.path.join(BASE_DIR, "credentials.json")
-SPREADSHEET_ID = "1iR7Qs7hK6kbUADjWSCrCnY3xb9IDSiDxQgB-zbSDFo8"  # вставь свой ID таблицы
+SPREADSHEET_ID = ""  # место для id таблицы
 RANGE_NAME = "Лист1!A:B"
 def add_or_update_user_message(a, b):
     # Подключаемся к Google Sheets API
@@ -59,7 +59,7 @@ def add_or_update_user_message(a, b):
 logging.basicConfig(level=logging.INFO)
 
 # Замените 'ВАШ_БОТ_ТОКЕН' на токен вашего бота
-BOT_TOKEN = '8091561490:AAFnG3qzjXLCw9Pkz0z9VHDT6GbtCYscamc'
+BOT_TOKEN = ''
 
 # Инициализация хранилища для состояний FSM
 storage = MemoryStorage()
@@ -74,7 +74,7 @@ class BoxOrder(StatesGroup):
     knows_punch_form = State()
     final_calculations = State()
 
-# --- КЛАВИАТУРЫ ---
+# КЛАВИАТУРЫ
 
 # Приветственное сообщение
 def get_welcome_keyboard():
@@ -101,7 +101,7 @@ def get_restart_keyboard():
     return keyboard
 
 
-# --- ОБРАБОТЧИКИ СООБЩЕНИЙ (ХЭНДЛЕРЫ) ---
+#ОБРАБОТЧИКИ СООБЩЕНИЙ (ХЭНДЛЕРЫ)
 
 # 1. Обработчик команды /start
 @dp.message(CommandStart())
